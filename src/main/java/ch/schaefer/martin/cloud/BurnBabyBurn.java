@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * The Lunar Module's modules main ignition routine.
+ * The Lunar Module's main ignition routine.
  * 
  * @author Martin Schäfer
  */
