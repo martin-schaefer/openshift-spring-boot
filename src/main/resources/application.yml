@@ -2,4 +2,4 @@ spring:
   application:
     name: openshift-spring-boot-service
 service:
-  message: Hi there, this is the default message.
+  message: "${SERVICE_MESSAGE:Hi there, this is the default message.}"
