@@ -2,6 +2,7 @@ package ch.schaefer.martin.cloud;
 
 import java.time.LocalDateTime;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,6 +16,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class RestController {
 
+	private final String message;
+
+	public RestController(@Value("${service.message}") String message) {
+		this.message = message;
+	}
+
 	/**
 	 * Say hello to earth
 	 * 
@@ -24,6 +31,6 @@ public class RestController {
 	@GetMapping("/hello")
 	@ResponseBody
 	public String hello() {
-		return "Houston, Tranquility Base here. The Eagle has landed. (" + LocalDateTime.now().toString() + ")";
+		return message + " (" + LocalDateTime.now().toString() + ")";
 	}
 }
