@@ -1,5 +1,9 @@
 spring:
   application:
     name: openshift-spring-boot-service
+  cloud:
+    kubernetes:      
+      reload:
+        enabled: true
 service:
   message: "${SERVICE_MESSAGE:Hi there, this is the default message.}"
