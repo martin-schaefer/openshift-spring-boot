@@ -5,5 +5,10 @@ spring:
     kubernetes:      
       reload:
         enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 service:
   message: "${SERVICE_MESSAGE:Hi there, this is the default message.}"
