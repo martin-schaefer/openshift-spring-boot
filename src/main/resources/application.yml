@@ -6,6 +6,11 @@ spring:
       reload:
         enabled: true
 management:
+  endpoint:
+    refresh:      
+      enabled: true
+    restart: 
+      enabled: true
   endpoints:
     web:
       exposure:
