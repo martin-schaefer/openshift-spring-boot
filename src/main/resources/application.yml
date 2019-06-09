@@ -15,5 +15,9 @@ management:
     web:
       exposure:
         include: "*"
+  cache:
+    cache-names: helloCache
+    caffeine:
+      spec: expireAfterAccess=5s
 service:
   message: "${SERVICE_MESSAGE:Hi there, this is the default message.}"

@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,6 +37,7 @@ public class RestController {
 	 * 
 	 */
 	@GetMapping("/hello")
+	@Cacheable("helloCache")
 	@ResponseBody
 	public String hello() {
 		return message + " (" + LocalDateTime.now().toString() + ")";
