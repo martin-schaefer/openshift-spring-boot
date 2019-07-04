@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>ch.schaefer.martin.cloud</groupId>
 	<artifactId>openshift-spring-boot-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.5</version>
 	<name>OpenShift Spring Boot Service</name>
 	<description>A simple Spring Boot Service hosted on OpenShift</description>
 
@@ -88,6 +88,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>build-info</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
